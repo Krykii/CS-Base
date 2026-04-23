@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Lista</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>Lista raportów</header>
+
+<div class="container" id="list"></div>
+
+<script src="app.js"></script>
+
+<script>
+const list = document.getElementById("list");
+const data = getData();
+
+data.reverse().forEach(r => {
+  list.innerHTML += `
+    <div class="card">
+      <p><b>Typ:</b> ${r.type}</p>
+      <p>${r.description}</p>
+      <a href="profile.html?id=${r.id}">Zobacz</a>
+    </div>
+  `;
+});
+</script>
+
+</body>
+</html>

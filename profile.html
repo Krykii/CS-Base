@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Profil</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>Profil</header>
+
+<div class="container" id="content"></div>
+
+<script src="app.js"></script>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+
+const data = getById(id);
+const box = document.getElementById("content");
+
+if (data) {
+  box.innerHTML = `
+    <div class="card">
+      <p><b>Link:</b> <a href="${data.link}" target="_blank">${data.link}</a></p>
+      <p><b>Typ:</b> ${data.type}</p>
+      <p><b>Opis:</b> ${data.description}</p>
+      <p><b>Data:</b> ${data.date}</p>
+    </div>
+  `;
+} else {
+  box.innerHTML = "<p>Nie znaleziono profilu</p>";
+}
+</script>
+
+</body>
+</html>

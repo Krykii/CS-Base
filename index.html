@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>CS Notes Lite</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>CS Notes Lite</header>
+
+<div class="container">
+
+  <h2>Dodaj raport</h2>
+
+  <input id="link" placeholder="Link do profilu Steam">
+
+  <select id="type">
+    <option value="cheater">Cheater</option>
+    <option value="troll">Troll</option>
+  </select>
+
+  <textarea id="desc" placeholder="Opis"></textarea>
+
+  <button onclick="save()">Dodaj</button>
+
+  <hr>
+
+  <h2>Szukaj profilu</h2>
+
+  <input id="search" placeholder="Wklej link">
+  <button onclick="go()">Szukaj</button>
+
+  <br><br>
+  <a href="list.html">📋 Lista wszystkich</a>
+
+</div>
+
+<script src="app.js"></script>
+
+<script>
+function save() {
+  addReport(
+    document.getElementById("link").value,
+    document.getElementById("type").value,
+    document.getElementById("desc").value
+  );
+
+  alert("Dodano!");
+}
+
+function go() {
+  const link = document.getElementById("search").value;
+  window.location.href = "profile.html?link=" + encodeURIComponent(link);
+}
+</script>
+
+</body>
+</html>
