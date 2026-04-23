@@ -24,3 +24,7 @@ function addReport(link, type, description) {
 function getById(id) {
   return getData().find(x => x.id == id);
 }
+
+function findByLink(link) {
+  return getData().find(x => x.link === link);
+}
