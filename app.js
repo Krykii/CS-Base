@@ -28,3 +28,9 @@ function getById(id) {
 function findByLink(link) {
   return getData().find(x => x.link === link);
 }
+
+function deleteReport(id) {
+  let data = getData();
+  data = data.filter(x => x.id != id);
+  saveData(data);
+}
