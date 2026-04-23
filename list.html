@@ -22,7 +22,12 @@ data.reverse().forEach(r => {
     <div class="card">
       <p><b>Typ:</b> ${r.type}</p>
       <p>${r.description}</p>
+  
       <a href="profile.html?id=${r.id}">Zobacz</a>
+      
+      <br><br>
+  
+      <button onclick="remove(${r.id})">Usuń</button>
     </div>
   `;
 });
